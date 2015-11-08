@@ -1,0 +1,4 @@
+nose
+pep8
+pyflakes
+watchdog
