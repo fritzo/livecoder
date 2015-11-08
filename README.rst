@@ -5,8 +5,8 @@ Livecoder
    :target: https://travis-ci.org/fritzo/livecoder
    :alt: Build status
 
-.. image:: https://badge.fury.io/py/livecoder.png
-   :target: https://pypi.python.org/pypi/livecoder
+.. image:: https://badge.fury.io/py/live.png
+   :target: https://pypi.python.org/pypi/live
    :alt: PyPI Version
 
 A simple library to support live coding in python.
