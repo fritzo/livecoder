@@ -1,6 +1,6 @@
 from setuptools import setup
 
-__version__ = '0.0.0'
+__version__ = '0.0.1'
 
 try:
     with open('README.rst') as f:
@@ -17,6 +17,7 @@ config = {
     'author_email': 'fritz.obermeyer@gmail.com',
     'url': 'https://github.com/fritzo/livecoder',
     'py_modules': ['live'],
+    'entry_points': {'console_scripts': ['live = live.__main__:main']},
 }
 
 setup(**config)
