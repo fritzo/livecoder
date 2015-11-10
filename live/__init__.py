@@ -70,7 +70,7 @@ _state = State()
 keep = _state.keep
 
 
-def clear():
+def _clear_all():
     for key in dir(keep):
         if not key.startswith('__'):
             delattr(keep, key)
@@ -78,6 +78,32 @@ def clear():
     _state.once_done.clear()
     _state.always.clear()
     _state.cached.clear()
+
+
+def _clear_if(pred):
+    for key in dir(keep):
+        if pred(key) and not key.startswith('__'):
+            delattr(keep, key)
+    for key in filter(pred, _state.once.keys()):
+        del _state.once[key]
+    for key in filter(pred, _state.once_done):
+        _state.once_done.remove(key)
+    for key in filter(pred, _state.always):
+        del _state.always[key]
+    for key in filter(pred, _state.cached):
+        del _state.cached[key]
+
+
+def clear(pattern=None):
+    if pattern is None:
+        _clear_all()
+    else:
+        try:
+            pred = re.compile(pattern).match
+        except Exception as e:
+            log_error(e)
+            return
+        _clear_if(pred)
 
 
 def cached(fun):
