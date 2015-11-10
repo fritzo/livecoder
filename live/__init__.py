@@ -88,9 +88,9 @@ def _clear_if(pred):
         del _state.once[key]
     for key in filter(pred, _state.once_done):
         _state.once_done.remove(key)
-    for key in filter(pred, _state.always):
+    for key in filter(pred, _state.always.keys()):
         del _state.always[key]
-    for key in filter(pred, _state.cached):
+    for key in filter(pred, _state.cached.keys()):
         del _state.cached[key]
 
 
