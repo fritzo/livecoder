@@ -42,13 +42,6 @@ def log_error(message):
     sys.stderr.flush()
 
 
-def path_to_module(module):
-    path = os.path.realpath(module.__file__)
-    path = re.sub(r'\.py[co]$', '.py', path)
-    assert os.path.exists(path), path
-    return path
-
-
 def import_module_by_path(path):
     path = os.path.relpath(path)
     assert os.path.exists(path), path
