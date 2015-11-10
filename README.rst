@@ -1,11 +1,11 @@
 Livecoder
 =========
 
-.. image:: https://travis-ci.org/fritzo/livecoder.png?branch=master
+.. image:: https://img.shields.io/travis/fritzo/livecoder/master.svg
    :target: https://travis-ci.org/fritzo/livecoder
    :alt: Build status
 
-.. image:: https://badge.fury.io/py/live.png
+.. image:: https://img.shields.io/pypi/v/live.svg
    :target: https://pypi.python.org/pypi/live
    :alt: PyPI Version
 
